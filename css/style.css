@@ -1,0 +1,427 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("../fonts/GothamPro-Bold/GothamPro-Bold.eot");
+  src: local("☺"), url("../fonts/GothamPro-Bold/GothamPro-Bold.woff") format("woff"), url("../fonts/GothamPro-Bold/GothamPro-Bold.ttf") format("truetype"), url("../fonts/GothamPro-Bold/GothamPro-Bold.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("../fonts/GothamPro/GothamPro.eot");
+  src: local("☺"), url("../fonts/GothamPro/GothamPro.woff") format("woff"), url("../fonts/GothamPro/GothamPro.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+img {
+  vertical-align: top;
+}
+
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  background-color: #0b1d26;
+  color: #fff;
+  font-family: "Gotham Pro", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wraper {
+  min-height: 100%;
+}
+
+/* Показываем лоадер пока контент не загружен */
+
+
+.loader {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+.parallax {
+  min-height: 100vh;
+}
+
+.parallax__body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.parallax__images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+}
+
+.images-parallax__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.images-parallax__fence,
+.images-parallax__buildings,
+.images-parallax__mountains {
+  position: absolute;
+}
+
+.images-parallax__mountains {
+  background: url("../img/mountains.jpg") center/cover no-repeat;
+  width: 110%;
+  left: -5%;
+  top: -25%;
+  height: 110%;
+}
+
+.images-parallax__buildings {
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+.images-parallax__buildings img {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.images-parallax__buildings button {
+  text-transform: uppercase;
+  background-color: #a15b1e;
+  border: calc(1px + 2 * (100vw - 320px) / 1600) solid #56240d;
+  color: #56240d;
+  text-shadow: 1px 1px 0px rgba(151, 65, 28, 0.8), -1px 0px 0px rgba(151, 65, 28, 0.8);
+  padding: calc(1px + 3 * (100vw - 320px) / 1600) calc(2px + 6 * (100vw - 320px) / 1600);
+  border-radius: calc(2px + 5 * (100vw - 320px) / 1600);
+  font-size: calc(5px + 19 * (100vw - 320px) / 1600);
+  font-weight: bold;
+  letter-spacing: calc(1px + 2 * (100vw - 320px) / 1600);
+  -webkit-box-shadow: calc(1px + 1 * (100vw - 320px) / 1600) calc(1px + 1 * (100vw - 320px) / 1600) calc(1px + 4 * (100vw - 320px) / 1600) rgba(0, 0, 0, 0.7);
+          box-shadow: calc(1px + 1 * (100vw - 320px) / 1600) calc(1px + 1 * (100vw - 320px) / 1600) calc(1px + 4 * (100vw - 320px) / 1600) rgba(0, 0, 0, 0.7);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.images-parallax__buildings button:hover {
+  border-color: #7ebe31;
+}
+
+.images-parallax__buildings button span {
+  color: rgb(116, 174, 46);
+  text-shadow: 1px 1px 0px rgba(26, 48, 0, 0.8), -1px 0px 0px rgba(26, 48, 0, 0.8);
+  
+}
+
+.span_1 {
+  -webkit-animation: neon 3s linear infinite alternate 0s forwards;
+          animation: neon 3s linear infinite alternate 0s forwards;
+}
+.span_2 {
+  -webkit-animation: neon 3s linear infinite alternate 1s forwards;
+          animation: neon 3s linear infinite alternate 1s forwards;
+}
+.span_3 {
+  -webkit-animation: neon 3s linear infinite alternate 2s forwards;
+          animation: neon 3s linear infinite alternate 2s forwards;
+}
+
+@-webkit-keyframes neon {
+  0% {
+    color: rgb(116, 174, 46);
+    
+  }
+  50% {
+    color: #a1ff2e;
+    
+  }
+  100% {
+    color: rgb(116, 174, 46);
+    
+  }
+}
+
+.market {
+  -webkit-animation: glow 3s linear infinite alternate 0s forwards;
+          animation: glow 3s linear infinite alternate 0s forwards;
+}
+
+.bank {
+  -webkit-animation: glow 3s linear infinite alternate 1s forwards;
+          animation: glow 3s linear infinite alternate 1s forwards;
+}
+
+.avto {
+  -webkit-animation: glow 3s linear infinite alternate 2s forwards;
+          animation: glow 3s linear infinite alternate 2s forwards;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);   
+  }
+  50% {    
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.8);    
+  }
+  100% {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);    
+  }
+}
+
+.images-parallax__fence {
+  background: url("../img/fence_and_grass.png") top/cover no-repeat;
+  bottom: -3%;
+  height: calc(70px + 210 * (100vw - 320px) / 1600);
+  width: 120%;
+  left: -10%;
+  z-index: 4;
+}
+
+.market__container,
+.bank__container,
+.avto__container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.3333%;
+          flex: 1 1 33.3333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.bank,
+.market,
+.avto {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.bank {
+  margin-left: 52%;
+  margin-bottom: calc(36vw + 24 * (100vw - 320px) / 1600);
+}
+
+.market {
+  margin-left: 62%;
+  margin-bottom: calc(29vw + 21 * (100vw - 320px) / 1600);
+}
+
+.avto {
+  margin-left: 39%;
+  margin-bottom: calc(28.5vw + 21.5 * (100vw - 320px) / 1600);
+}
+
+/* Стили для всплывающего окна */
+
+body.lock {
+  overflow: hidden;
+}
+
+/* Верстаем всплывающие окна */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 0;
+  left: 0;
+  /* Скрываем окно. Так как display: none не может быть анимирован, идем иным путем */
+  opacity: 0;
+  visibility: hidden;
+  /* Добавляем скролл */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Добавляем анимацию */
+  transition: all 0.8s ease 0s;
+}
+/* При переходе по ссылке #popup объект с этим классом получает псевдокласс target */
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.popup.open .popup__content {  
+  opacity: 1;  
+  transform: scale(1);
+}
+
+.popup__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  padding: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)))
+          calc(2px + (10 - 2) * ((100vw - 320px) / (1920 - 320)));
+}
+/* Непосредственно само всплывающее окно */
+.popup__content {  
+  color: #22475A;  
+  position: relative;
+  /* Анимируем контент окна */
+  transition: all 0.8s ease 0s;
+  opacity: 0;  
+  transform: scale(0);
+  background-color: #fff;
+  /* margin: 50px 0; */
+  margin: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)))
+          0;
+  /* border-radius: 20px; */
+  border-radius: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
+  box-shadow: 0px 0px 8px rgba(34, 71, 90, 0.5);
+}
+
+.popup__close {
+  /* Позиционируем кнопку относительно блока popup__content */
+  position: absolute;  
+  right: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
+  top: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));  
+  font-size: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
+  color: black;  
+}
+
+.popup__text__container {  
+  padding: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));  
+  font-size: calc(8px + (26 - 8) * ((100vw - 320px) / (1920 - 320)));
+  line-height: 200%;
+  text-align: center;
+}
+
+.popup__greeting {  
+  margin-bottom: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.signature__container {
+  position: absolute;
+  bottom: calc(15px + (50 - 15) * ((100vw - 320px) / (1920 - 320)));
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.signature {
+  
+  font-size: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: normal;
+  color: white;  
+  z-index: 10;
+  letter-spacing: calc(1px + (2 - 1) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@media screen and (orientation: portrait) {
+  .images-parallax__mountains {    
+    top: -10%;    
+  }
+}

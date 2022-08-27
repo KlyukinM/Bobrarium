@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бобрариум</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link type="image/png" sizes="120x120" rel="icon" href="img/favicon.png">
+</head>
+<body>  
+    <div class="wraper hide">
+        <section class="parallax">
+            <div class="parallax__body">                
+                <div class="parallax__images">
+                    <div class="images-parallax__item">
+                        <div class="images-parallax__fence"></div>
+                    </div>
+                    <div class="images-parallax__item">
+                        <div class="images-parallax__buildings">
+                            <img src="./img/buildings.png" alt="">
+                            <div class="market__container">                                
+                                <button class="market">Бобр<span class="span_1">маркет</span></button>                                                                
+                            </div>
+                            <div class="bank__container">
+                                <button class="bank">Бобр<span class="span_2">банк</span></button>
+                            </div>
+                            <div class="avto__container">                           
+                                <button class="avto">Бобр<span class="span_3">драйв</span></button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="images-parallax__item">
+                        <div class="images-parallax__mountains"></div>
+                    </div>                    
+                </div>
+            </div>
+        </section>        
+    </div>
+    <div class="signature__container">
+        <a href="https://bobrarium.ru/cv" target="_blank"><div class="signature">Made by Klyukin Mikhail</div></a>
+    </div>    
+    <!-- Попап / высплывающие окна  -->
+    <div id="popup" class="popup">
+        
+        <!-- Создаем тело всплывающего окна -->
+        <div class="popup__body">
+            <!-- Создаем оболочку контента -->
+            <div class="popup__content">
+                <!-- Создаем кнопку для закрытия -->
+                <a href="#header" class="popup__close close-popup">X</a>
+                <!-- И сам контент -->
+                <div class="popup__text__container">
+                    <p class="popup__greeting">ОЙ!</p>
+                    <p>Этот сайт пока не готов.</p>
+                    <p>Попробуйте позже.</p>                          
+                </div>               
+            </div>
+        </div>
+    </div>
+    <div class="loader">
+        <img src="./img/loading.gif" alt="">
+    </div>   
+<script src="js/script.js"></script>
+<script src="js/pop_up.js"></script>
+</body>
+</html>
