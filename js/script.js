@@ -1,8 +1,20 @@
 'use strict'
 
 // Ждем загрузку контента
-window.onload = function () {    
+window.onload = function () {
+    // Показываем загруженный контент
+    let hideElement = document.querySelector('.hide')
+    let loadingPage = document.querySelector('.loader')
 
+    if (hideElement) {
+        hideElement.classList.remove('hide')
+    }
+
+    if (loadingPage) {
+        loadingPage.classList.add('hide')
+    }
+
+    // Параллакс эффект
     const parallax = document.querySelector('.parallax');
 
     if (parallax) {        
